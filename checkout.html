@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <!--- My CSS --->
+    <link rel="stylesheet" src="/Styles/styles.css" />
+    <title>STUDZ | Checkout</title>
+  </head>
+  <body class="bg-dark text-white">
+    <header class="showcase">
+      <!---- NavBar ---->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand fs-2 fw-bolder" href="./index.html">STUDZ!</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="/Styles/index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Styles/index.html#products">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML/admin.html">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/HTML/checkout.html">Checkout</a>
+              </li>
+            </ul>
+            <button
+            id="add"
+            data-toggle="modal"
+            data-target="#myModal"
+            class="btn btn-outline-light my-2 my-sm-0 text-end"
+            onclick="addItems();"
+          >
+            Add Item
+          </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br />
+    <hr class="text-white display-2" />
+    <!---- Checkout Form ---->
+    <section id="checkout" class="bg-dark">
+      <!---- Cart List ---->
+      <div class="container-fluid">
+        <h1 class="text-white display-4 text-center fw-bolder mt-3 mb-3">
+          Your Items
+        </h1>
+      </div>
+      <div class="table-details container">
+        <table
+          class="table table-dark table-striped text-white table-hover table-responsive"
+          id="listOfCheckout"
+        >
+          <thead>
+            <tr>
+              <th class="col-md-6">Product</th>
+              <th class="col-sm-2">Quantity</th>
+              <th class="col-sm-2">Price</th>
+              <th class="col-sm-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <!--- Checkout Form --->
+      <div class="container">
+        <div class="col-75">
+          <div class="container">
+            <form action="/action_page.php">      
+              <div class="row">
+                <div class="col-50">
+                  <!---- Client Details ---->
+                  <h3 class="text-center fs-1">Client Details</h3>
+                  <div class="w-100 text-center">
+                    <label for="fname">Full Name</label>
+                    <input type="text" class="w-100 text-center" id="fname" name="firstname" placeholder="What's your name ?">
+                  </div>
+                  <br>
+                  <div class="w-100 text-center">
+                    <label for="email">Email</label>
+                    <input type="text" class="w-100 text-center" id="email" name="email" placeholder="i-must-practise-coding-more-because-wow@mweb.com">
+                  </div>
+                  <br>
+                  <div class="w-100 text-center">
+                    <label for="address">Address</label>
+                    <input type="text" class="w-100 text-center" id="adr" name="address" placeholder="09 Coding Street">
+                  </div>
+                  <br>
+                  <div class="w-100 text-center">
+                    <label for="city">City</label>
+                    <input type="text" class="w-100 text-center" id="city" name="city" placeholder="Istanbul">
+                  </div>
+                </div>
+                <br>
+                <hr class="fs-1">
+                <!---- Payment ---->
+                <div class="col-50">
+                  <h3 class="text-center fs-1">Payment</h3>
+                  <small class="text-center text-muted">All cards are accepted .</small>
+                  <br>
+                  <br>
+                  <label for="cname" class="text-center">Name on Card</label>
+                  <input type="text" class="w-100 text-center" id="cname" name="cardname" placeholder="Boss Lady">
+                  <label for="ccnum" class="text-center">Credit card number</label>
+                  <input type="text" class="w-100 text-center" id="ccnum" name="cardnumber" placeholder="072 123 4567">
+                </div>
+              </div>
+              <label>
+                <input type="checkbox" class="text-center" checked="checked" name="sameadr">Shipping address same as billing
+              </label>
+              <br>
+              <input type="submit" value="Continue to checkout" class="btn btn-outline-light text-center fs-4">
+            </form>
+          </div>
+        </div>
+    </section>
+
+        <!---- Footer section ---->
+        <section
+        class="container-fluid"
+        style="background-color: #7952b3; color: #e1e8eb; width: 100%"
+      >
+        <div class="footer text-center">
+          <p>
+            Thank you for exploring our
+            <span style="color: #ffd523">STUDZ!</span> store 😊 .
+           </p>
+           <br />
+           <p>Please come again soon !!</p>
+           <br />
+           <p>💛💛💛💛💛💛💛💛</p>
+            </div>
+          </div>
+          <div class="row text-center justify-content-center">
+            <div class="copyright col-sm-2 fs-6">
+              <p>ⓒ Copyright | Keren Chelsea Bruce | All rights reserved .</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!---- My JavaScript ---->
+    <script src="/Scripts/admin.js"></script>
+    <script src="/Scripts/checkout.js"></script>
+    <!--- Javascript --->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
