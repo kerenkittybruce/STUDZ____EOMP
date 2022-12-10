@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <!---- Bootstrap CSS ---->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <!---- My CSS ---->
+    <link rel="stylesheet" href="/Styles/styles.css" />
+    <title>STUDZ | Admin</title>
+  </head>
+  <body>
+    <header class="showcase">
+      <!---- NavBar ---->
+      <nav
+        class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-center"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand fs-2 fw-bolder" href="/Styles/index.html"
+            >STUDZ!</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="/Styles/index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/Styles/index.html#products"
+                  >Products</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/HTML/admin.html">Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/HTML/checkout.html">Checkout</a>
+              </li>
+            </ul>
+            <button
+              id="add"
+              data-toggle="modal"
+              data-target="#myModal"
+              class="btn btn-outline-light my-2 my-sm-0 text-end"
+            >
+              Add Item
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br />
+    <hr class="text-white display-2" />
+
+    <!----- Admin ---->
+    <section id="admin" class="bg-dark">
+      <div class="container-fluid">
+        <h1 class="text-white display-4 text-center fw-bolder mt-3 mb-3">
+          Selected Items
+        </h1>
+      </div>
+      <div class="table-details container">
+        <table
+          class="table table-dark text-white table-hover table-responsive"
+          id="adminEdit"
+        >
+          <thead>
+            <tr>
+              <th class="col-md-6">Product</th>
+              <th class="col-sm-2">Quantity</th>
+              <th class="col-sm-2">Price</th>
+              <th class="col-sm-4">Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!---- Add / Create ---->
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Add To Checkout</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-content">
+                <form>
+                  <label class="fw-bold" for="productName">Product :</label>
+                  <select class="form-control" id="itemSelected">
+                    <option>K-Style Assassin Set</option>
+                    <option>Elegant Shoes</option>
+                    <option>Black Velvet Dress</option>
+                    <option>Jaggered Sweater</option>
+                    <option>Dark Lolita Dress</option>
+                  </select>
+                  <div class="form-group mx-3 my-6">
+                    <label class="fw-bold" for="quantity">Quantity :</label>
+                    <input
+                      type="text"
+                      class="form-control w-100"
+                      id="quantitySelected"
+                      placeholder="How many units of this item ?"
+                    />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                id="addBtn"
+                type="submit"
+                class="btn btn-dark"
+                onsubmit="addItem();"
+              >
+                Add Items
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---- Footer section ---->
+    <section
+      class="container-fluid"
+      style="background-color: #7952b3; color: #e1e8eb; width: 100%"
+    >
+      <div class="footer text-center">
+        <div class="footer-row row">
+          <div class="cont-col-1 col-sm-2 fs-6">
+            <p>Contact Number : +27 64 967 8020</p>
+            <p>E-mail : kerenchelseabruce@gmail.com</p>
+            <p>
+              Address : 19 Shallow Green Rd,<br />
+              Claremont Estate,<br />
+              Cape Town,<br />
+              8000
+            </p>
+          </div>
+          <div
+            class="cont-col-2 col-sm-2 fs-2 fw-bolder"
+            style="color: #e1e8eb"
+          >
+            <p>
+              Thank you for exploring our
+              <span style="color: #ffd523">STUDZ!</span> store 😊 .
+            </p>
+            <br />
+            <p>Please come again soon !!</p>
+            <br />
+            <p>💛💛💛💛💛💛💛💛</p>
+          </div>
+        </div>
+        <div class="row text-center justify-content-center">
+          <div class="copyright col-sm-2 fs-6">
+            <p>ⓒ Copyright | Keren Chelsea Bruce</p>
+            <br />
+            <p>All rights reserved .</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---- My Javascript ---->
+    <!-- <script src="/Scripts/code.js"></script> -->
+    <script src="/Scripts/admin.js"></script>
+    <!---- Bootstrap JavaScript ---->
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
