@@ -50,7 +50,7 @@ function minusThis() {
   document.getElementById("displayThis").innerHTML = displayThis--;
 }
 
-//
+// To solve quantity button issue
 
 for (i = 0; i < productItemString; i++) {}
 
@@ -84,16 +84,20 @@ function del() {
       " 💜Do you really want to remove this item ?💜\n 💜Really ?💜\n 💜Like, actually ?💜\n  ✨🥺✨"
     )
   ) {
-    const storageItems = JSON.parse(localStorage.getItem("productItemString"));
-    let tableRow = rowIndex - 1;
-    if (tableRow) {
-      tableRow && storageItems.splice(tableRow, 1);
-      localStorage.setItem("productItemString", JSON.stringify(storageItems));
-      window.location.reload();
-      console.log(storageItems);
-    } else {
-      return;
-    }
+    const myBtns = document.querySelectorAll(".remBtn");
+
+    const addRemoveCommand = (btn) => {
+      btn.addEventListener("click", removeCommand);
+    };
+
+    const removeCommand = (event) => {
+      const btn = event.currentTarget;
+      const cell = btn.parentNode;
+      const row = cell.parentNode;
+      row.remove();
+    };
+
+    buttons.forEach(addRemoveCommand);
   } else {
     return false;
   }
